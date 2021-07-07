@@ -29,14 +29,79 @@ users.forEach((user) => {
 
 // calculate age
 const getAverageAge = (acc, user) => {
-  const totalAge = users.reduce((acc, user) => {
-    return acc + user.age;
-  }, 0);
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      const totalAge = users.reduce((acc, user) => {
+        return acc + user.age;
+      }, 0);
 
-  return totalAge / users.length;
+      resolve(totalAge / users.length);
+    }, 2000);
+  });
 }
 
-buttonContainer.addEventListener('click', () => {
-  const averageAge = getAverageAge();
-  alert(`Rata-rata umur: ${averageAge}`);
+// function waiting from 1 to 3
+
+const firstStarted = () => {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve('First Started')
+    }, 2000);
+  });
+}
+
+const firstFinished = () => {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve('First Finished')
+    }, 2000);
+  });
+}
+
+const secondStarted = () => {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve('Second Started')
+    }, 2000);
+  });
+}
+
+const secondFinished = () => {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve('Second Finished')
+    }, 2000);
+  });
+}
+
+const thirdStarted = () => {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve('Third Started')
+    }, 2000);
+  });
+}
+
+const thirdFinished = () => {
+  return  new Promise((resolve) => {
+    setTimeout(() => {
+      resolve('Third Finished')
+    }, 2000);
+  });
+}
+
+buttonContainer.addEventListener('click', async () => {
+  console.log(await firstStarted());
+
+  console.log(await firstFinished());
+
+  console.log(await secondStarted());
+
+  console.log(await secondFinished());
+
+  console.log(await thirdStarted());
+
+  console.log(await getAverageAge());
+
+  console.log(await thirdFinished());
 });
