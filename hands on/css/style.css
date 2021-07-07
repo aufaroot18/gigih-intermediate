@@ -1,0 +1,41 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+}
+
+main {
+  max-width: 960px;
+  width: 100%;
+  margin: 1rem auto;
+  text-align: center;
+}
+
+table {
+  margin: 0 auto;
+  font-size: 1.5rem;
+}
+
+table, th, td {
+  border: 1px solid #bdc3c7;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 0.5rem 1rem;
+}
+
+button {
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  background-color: #1abc9c;
+  color: #ecf0f1;
+  border: none;
+  border-radius: 10px;
+}
